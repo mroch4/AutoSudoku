@@ -1,0 +1,32 @@
+$cellSize: 8vh;
+
+body {
+  background-color: #ccc;
+
+  #board {
+    display: grid;
+    width: min-content;
+    gap: 1px;
+    grid-template: repeat(9, 1fr) / repeat(9, 1fr);
+
+    .cell {
+      width: $cellSize;
+      height: $cellSize;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      border: 1px solid black;
+      font-size: 0.4 * $cellSize;
+      cursor: pointer;
+
+      &:nth-child(3n) {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.marked {
+  background-color: yellow !important;
+}
